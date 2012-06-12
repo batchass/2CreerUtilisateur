@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="_2CreerUtilisateur.VisualWebPart1.VisualWebPart1, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">2CreerUtilisateur</property>
+        <property name="Description" type="string">Permet de saisir les informations du nouvel arrivant, de les valider et de demarrer le flux de travail "Validation_Arrivant".</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
