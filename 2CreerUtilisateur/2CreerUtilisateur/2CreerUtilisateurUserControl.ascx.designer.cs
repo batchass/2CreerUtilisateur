@@ -112,15 +112,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         protected global::System.Web.UI.WebControls.TextBox txtFonction;
         
         /// <summary>
-        /// Contrôle RequiredFieldValidator4.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-        
-        /// <summary>
         /// Contrôle treeService.
         /// </summary>
         /// <remarks>
@@ -148,15 +139,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         protected global::System.Web.UI.WebControls.DropDownList ddStatut;
         
         /// <summary>
-        /// Contrôle RequiredFieldValidator5.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
-        
-        /// <summary>
         /// Contrôle ddLieuTravail.
         /// </summary>
         /// <remarks>
@@ -166,15 +148,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         protected global::System.Web.UI.WebControls.DropDownList ddLieuTravail;
         
         /// <summary>
-        /// Contrôle RequiredFieldValidator6.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-        
-        /// <summary>
         /// Contrôle txtBureau.
         /// </summary>
         /// <remarks>
@@ -182,15 +155,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBureau;
-        
-        /// <summary>
-        /// Contrôle RequiredFieldValidator7.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
         /// Contrôle UpdatePanel1.
@@ -301,15 +265,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         protected global::System.Web.UI.WebControls.DropDownList ddTelPortee;
         
         /// <summary>
-        /// Contrôle RequiredFieldValidator8.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-        
-        /// <summary>
         /// Contrôle ddChoixPoste.
         /// </summary>
         /// <remarks>
@@ -317,15 +272,6 @@ namespace _2CreerUtilisateur.VisualWebPart1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddChoixPoste;
-        
-        /// <summary>
-        /// Contrôle RequiredFieldValidator9.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
         
         /// <summary>
         /// Contrôle UpdatePanel3.
