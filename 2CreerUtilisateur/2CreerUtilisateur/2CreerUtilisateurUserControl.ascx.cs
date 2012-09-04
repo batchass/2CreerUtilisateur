@@ -240,44 +240,43 @@ namespace _2CreerUtilisateur.VisualWebPart1
         //=================================================================================================
         protected void Envoyer_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)// la validation est bonne ...
+            
+            if (lblService.Text != null || lblService.Text != "")
             {
-                if (lblService.Text != null || lblService.Text != "")
-                {
-                    // Si valiadtion est true alors, on enregistre la demande dans la liste sharepoint
+                // Si valiadtion est true alors, on enregistre la demande dans la liste sharepoint
 
-                    // on rempli l'item recuperer dans ligneInfo
-                    ligneInfo["Titre"] = "Etape2";
-                    ligneInfo["date d'entrée"] = NeverNull(dtEntree.SelectedDate.ToString());
-                    ligneInfo["date de sortie"] = NeverNull(dtSortie.SelectedDate.ToString());
-                    ligneInfo["Statut"] = NeverNull(ddStatut.SelectedValue.ToString());
-                    ligneInfo["Fonction"] = NeverNull(txtFonction.Text);
-                    ligneInfo["Lieu de travail"] = NeverNull(ddLieuTravail.SelectedValue.ToString());
-                    ligneInfo["N° bureau"] = NeverNull(txtBureau.Text);
-                    ligneInfo["Remplacement"] = NeverNull(rdAgentRemplace.SelectedValue.ToString());
-                    ligneInfo["Agent Remplacé"] = NeverNull(txtAgentRemplace.Text);
-                    ligneInfo["Téléphone fixe"] = NeverNull(rdTelephonieFixe.SelectedValue.ToString());
-                    ligneInfo["Téléphone portable"] = NeverNull(rdTelPortable.SelectedValue.ToString());
-                    ligneInfo["Justification téléphone portable"] = NeverNull(txtTelPortable.Text);
-                    ligneInfo["Jour d'utilisation"] = "du " + ddJourDebut.SelectedValue.ToString() + " au " + ddJourFin.SelectedValue.ToString();
-                    ligneInfo["Portée d'utilisation"] = NeverNull(ddTelPortee.SelectedValue.ToString());
-                    ligneInfo["Poste de travail"] = NeverNull(ddChoixPoste.SelectedValue.ToString());
-                    ligneInfo["Justification du poste de travail"] = NeverNull(txtStationGraph.Text);
-                    ligneInfo["Accés Internet"] = NeverNull(rdAccesInternet.SelectedValue.ToString());
-                    ligneInfo["Accés Mail"] = NeverNull(rdAdresseMail.SelectedValue.ToString());
-                    ligneInfo["Accés à Post-Office"] = NeverNull(rdPostOffice.SelectedValue.ToString());
-                    ligneInfo["Accés à Actes-Office"] = NeverNull(rdActesOffice.SelectedValue.ToString());
-                    ligneInfo["Accés au logiciel Finance"] = NeverNull(rdLogicielFinance.SelectedValue.ToString());
-                    ligneInfo["Accés à la saisie information DRH"] = NeverNull(rdSaisiInfoDRH.SelectedValue.ToString());
-                    ligneInfo["Besoins spécifiques"] = NeverNull(txtBesoinsSpe.Text);
-                    ligneInfo["Service"] = lblService.Text;
-                    //mis a jour de l'item dans la base SP
-                    ligneInfo.Update();
+                // on rempli l'item recuperer dans ligneInfo
+                ligneInfo["Titre"] = "Etape2";
+                ligneInfo["date d'entrée"] = NeverNull(dtEntree.SelectedDate.ToString());
+                ligneInfo["date de sortie"] = NeverNull(dtSortie.SelectedDate.ToString());
+                ligneInfo["Statut"] = NeverNull(ddStatut.SelectedValue.ToString());
+                ligneInfo["Fonction"] = NeverNull(txtFonction.Text);
+                ligneInfo["Lieu de travail"] = NeverNull(ddLieuTravail.SelectedValue.ToString());
+                ligneInfo["N° bureau"] = NeverNull(txtBureau.Text);
+                ligneInfo["Remplacement"] = NeverNull(rdAgentRemplace.SelectedValue.ToString());
+                ligneInfo["Agent Remplacé"] = NeverNull(txtAgentRemplace.Text);
+                ligneInfo["Téléphone fixe"] = NeverNull(rdTelephonieFixe.SelectedValue.ToString());
+                ligneInfo["Téléphone portable"] = NeverNull(rdTelPortable.SelectedValue.ToString());
+                ligneInfo["Justification téléphone portable"] = NeverNull(txtTelPortable.Text);
+                ligneInfo["Jour d'utilisation"] = "du " + ddJourDebut.SelectedValue.ToString() + " au " + ddJourFin.SelectedValue.ToString();
+                ligneInfo["Portée d'utilisation"] = NeverNull(ddTelPortee.SelectedValue.ToString());
+                ligneInfo["Poste de travail"] = NeverNull(ddChoixPoste.SelectedValue.ToString());
+                ligneInfo["Justification du poste de travail"] = NeverNull(txtStationGraph.Text);
+                ligneInfo["Accés Internet"] = NeverNull(rdAccesInternet.SelectedValue.ToString());
+                ligneInfo["Accés Mail"] = NeverNull(rdAdresseMail.SelectedValue.ToString());
+                ligneInfo["Accés à Post-Office"] = NeverNull(rdPostOffice.SelectedValue.ToString());
+                ligneInfo["Accés à Actes-Office"] = NeverNull(rdActesOffice.SelectedValue.ToString());
+                ligneInfo["Accés au logiciel Finance"] = NeverNull(rdLogicielFinance.SelectedValue.ToString());
+                ligneInfo["Accés à la saisie information DRH"] = NeverNull(rdSaisiInfoDRH.SelectedValue.ToString());
+                ligneInfo["Besoins spécifiques"] = NeverNull(txtBesoinsSpe.Text);
+                ligneInfo["Service"] = NeverNull(lblService.Text);
+                //mis a jour de l'item dans la base SP
+                ligneInfo.Update();
 
-                    //redirection vers accueil
-                    Response.Redirect(url + "/SitePages/Accueil.aspx");
-                }
+                //redirection vers accueil
+                Response.Redirect(url + "/SitePages/Accueil.aspx");
             }
+          
         }
 
         //=================================================================================================

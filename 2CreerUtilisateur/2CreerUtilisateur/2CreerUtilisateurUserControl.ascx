@@ -388,5 +388,5 @@
             </div>
         </div>
 <p>
-    version 1.0.3</p>
+    version 1.0.4</p>
 
