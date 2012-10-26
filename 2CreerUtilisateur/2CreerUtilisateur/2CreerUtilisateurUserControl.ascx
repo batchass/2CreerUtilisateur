@@ -124,6 +124,9 @@
                         </td>
                         <td style="width: 440px">
                             <asp:TextBox ID="txtFonction" runat="server" Width="250px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtFonction"
+                                ErrorMessage="Veuillez entrez une Fonction *">
+                                        Veuillez entrez une Fonction *</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -145,6 +148,8 @@
                             <asp:DropDownList ID="ddStatut" runat="server">
                                 <asp:ListItem Selected="True">Choissisez un statut</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddStatut"
+                                ErrorMessage="*" InitialValue="Choissisez un statut">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -155,6 +160,8 @@
                             <asp:DropDownList ID="ddLieuTravail" runat="server">
                                 <asp:ListItem Selected="True">Choissisez un lieu de travail</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddLieuTravail"
+                                ErrorMessage="  *" InitialValue="Choissisez un lieu de travail">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -163,6 +170,9 @@
                         </td>
                         <td style="width: 440px">
                             <asp:TextBox ID="txtBureau" runat="server" Width="250px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtBureau"
+                                ErrorMessage="Veuillez entrez un numéro *">
+                                        Veuillez entrez un numéro *</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -245,6 +255,8 @@
                             <asp:DropDownList ID="ddTelPortee" runat="server">
                                 <asp:ListItem Selected="True">Selectionnez une option</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="ddTelPortee"
+                                ErrorMessage="*" InitialValue="Selectionnez une option">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -272,6 +284,8 @@
                             <asp:DropDownList ID="ddChoixPoste" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddChoixPoste_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Selectionner un poste</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="ddChoixPoste"
+                                ErrorMessage="*" InitialValue="Selectionner un poste">*</asp:RequiredFieldValidator>
                             <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
                                     <asp:Label ID="lblStationGraph" runat="server" Style="text-decoration: underline"
@@ -388,5 +402,5 @@
             </div>
         </div>
 <p>
-    version 1.0.4</p>
+    version 1.0.5</p>
 
