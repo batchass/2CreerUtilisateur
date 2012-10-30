@@ -17,8 +17,8 @@ namespace _2CreerUtilisateur.VisualWebPart1
 
         protected override void CreateChildControls()
         {
-            //Control control = Page.LoadControl(_ascxPath);
-            //Controls.Add(control);
+            Control control = Page.LoadControl(_ascxPath);
+            Controls.Add(control);
         }
     }
 }

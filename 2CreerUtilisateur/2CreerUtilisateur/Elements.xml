@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="2CreerUtilisateur" List="113" Url="_catalogs/wp">
-    <File Path="2CreerUtilisateur\2CreerUtilisateur.webpart" Url="2CreerUtilisateur.webpart" Type="GhostableInLibrary" >
-      <Property Name="Group" Value="CASA" />
-    </File>
-  </Module>
-</Elements>

@@ -6,7 +6,6 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="2CreerUtilisateurUserControl.ascx.cs" Inherits="_2CreerUtilisateur.VisualWebPart1.VisualWebPart1UserControl" %>
-       
         <div>
             <p>
                 <asp:Image ID="Image1" runat="server" AlternateText="Fiche Nouvel Arrivant" ImageUrl="~/_layouts/images/2CreerUtilisateur/_nouvelarrivantentete.jpg" />
@@ -125,6 +124,9 @@
                         </td>
                         <td style="width: 440px">
                             <asp:TextBox ID="txtFonction" runat="server" Width="250px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtFonction"
+                                ErrorMessage="Veuillez entrez une Fonction *">
+                                        Veuillez entrez une Fonction *</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -135,7 +137,7 @@
                             <asp:TreeView ID="treeService" runat="server" 
                                 onselectednodechanged="treeService_SelectedNodeChanged">
                             </asp:TreeView>
-                            <asp:Label ID="lblService" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="lblService" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -145,7 +147,9 @@
                         <td style="width: 440px">
                             <asp:DropDownList ID="ddStatut" runat="server">
                                 <asp:ListItem Selected="True">Choissisez un statut</asp:ListItem>
-                            </asp:DropDownList>">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddStatut"
+                                ErrorMessage="*" InitialValue="Choissisez un statut">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -156,6 +160,8 @@
                             <asp:DropDownList ID="ddLieuTravail" runat="server">
                                 <asp:ListItem Selected="True">Choissisez un lieu de travail</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddLieuTravail"
+                                ErrorMessage="  *" InitialValue="Choissisez un lieu de travail">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -164,6 +170,9 @@
                         </td>
                         <td style="width: 440px">
                             <asp:TextBox ID="txtBureau" runat="server" Width="250px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtBureau"
+                                ErrorMessage="Veuillez entrez un numéro *">
+                                        Veuillez entrez un numéro *</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -171,16 +180,20 @@
                             S'agit-il d'un remplacement :
                         </td>
                         <td style="width: 440px">
-                            <asp:RadioButtonList ID="rdAgentRemplace" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rdAgentRemplace_SelectedIndexChanged"
-                                RepeatDirection="Horizontal">
-                                <asp:ListItem>Oui</asp:ListItem>
-                                <asp:ListItem Selected="True">Non</asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:Label ID="lblAgentRemplace" runat="server" Style="text-decoration: underline"
-                                Visible="False">Nom de l'agent remplacé :</asp:Label>
-                            <br />
-                            <asp:TextBox ID="txtAgentRemplace" runat="server" EnableViewState="False" Visible="False"
-                                Width="429px"></asp:TextBox>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:RadioButtonList ID="rdAgentRemplace" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rdAgentRemplace_SelectedIndexChanged"
+                                        RepeatDirection="Horizontal">
+                                        <asp:ListItem>Oui</asp:ListItem>
+                                        <asp:ListItem Selected="True">Non</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                    <asp:Label ID="lblAgentRemplace" runat="server" Style="text-decoration: underline"
+                                        Visible="False">Nom de l'agent remplacé :</asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="txtAgentRemplace" runat="server" EnableViewState="False" Visible="False"
+                                        Width="429px"></asp:TextBox>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </td>
                     </tr>
                 </table>
@@ -198,27 +211,12 @@
                             Poste fixe :
                         </td>
                         <td style="width: 440px">
-                            <asp:RadioButtonList ID="rdTelephonieFixe" runat="server" 
-                                RepeatDirection="Horizontal" 
-                                onselectedindexchanged="rdTelephonieFixe_SelectedIndexChanged">
+                            <asp:RadioButtonList ID="rdTelephonieFixe" runat="server" RepeatDirection="Horizontal">
                                 <asp:ListItem>Oui</asp:ListItem>
                                 <asp:ListItem>Oui avec SDA*</asp:ListItem>
                                 <asp:ListItem Selected="True">Non</asp:ListItem>
                             </asp:RadioButtonList>
-                            <asp:Label ID="lbl5" runat="server" Style="font-size : 13px">
                             * SDA: Possibilité d’être joint de l’extérieur sans passer par le standard
-                            </asp:Label>
-                            
-                            <asp:RadioButtonList ID="rdNumeroExist" runat="server" 
-                                RepeatDirection="Horizontal" Visible="False" 
-                                onselectedindexchanged="rdNumeroExist_SelectedIndexChanged">
-                                <asp:ListItem Selected="True">Nouveau numéro</asp:ListItem>
-                                <asp:ListItem>Numéro existant</asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:Label ID="lblNumeroT" runat="server" Style="text-decoration: underline"
-                                        Visible="False">Numero utilisé :</asp:Label>
-                            <asp:TextBox ID="txtNumeroT" runat="server" Visible="False"
-                                        Width="429px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -226,25 +224,20 @@
                             Téléphone Portable :
                         </td>
                         <td style="width: 440px">
-                            <asp:RadioButtonList ID="rdTelPortable" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rdTelPortable_SelectedIndexChanged"
-                                RepeatDirection="Horizontal">
-                                <asp:ListItem>Oui</asp:ListItem>
-                                <asp:ListItem Selected="True">Non</asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:Label ID="lblTelPortable" runat="server" Style="text-decoration: underline"
-                                Visible="False">Justification :</asp:Label>
-                            <br />
-                            <asp:TextBox ID="txtTelPortable" runat="server" EnableViewState="False" Visible="False"
-                                Width="429px"></asp:TextBox>
-
-                            <asp:RadioButtonList ID="rdNumeroExistP" runat="server" RepeatDirection="Horizontal" Visible="False" onselectedindexchanged="rdNumeroExist_SelectedIndexChanged">
-                                <asp:ListItem Selected="True">Nouveau numéro</asp:ListItem>
-                                <asp:ListItem>Numéro existant</asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:Label ID="lblNumeroTPortable" runat="server" Style="text-decoration: underline"
-                                        Visible="False">Numero utilisé :</asp:Label>
-                            <asp:TextBox ID="txtNumeroTPortable" runat="server" Visible="False"
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:RadioButtonList ID="rdTelPortable" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rdTelPortable_SelectedIndexChanged"
+                                        RepeatDirection="Horizontal">
+                                        <asp:ListItem>Oui</asp:ListItem>
+                                        <asp:ListItem Selected="True">Non</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                    <asp:Label ID="lblTelPortable" runat="server" Style="text-decoration: underline"
+                                        Visible="False">Justification :</asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="txtTelPortable" runat="server" EnableViewState="False" Visible="False"
                                         Width="429px"></asp:TextBox>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </td>
                     </tr>
                     <tr>
@@ -262,6 +255,8 @@
                             <asp:DropDownList ID="ddTelPortee" runat="server">
                                 <asp:ListItem Selected="True">Selectionnez une option</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="ddTelPortee"
+                                ErrorMessage="*" InitialValue="Selectionnez une option">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -289,11 +284,20 @@
                             <asp:DropDownList ID="ddChoixPoste" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddChoixPoste_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Selectionner un poste</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:Label ID="lblStationGraph" runat="server" Style="text-decoration: underline"
-                                Visible="False">Justification :</asp:Label>
-                            <br />
-                            <asp:TextBox ID="txtStationGraph" runat="server" EnableViewState="False" Visible="False"
-                                Width="429px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="ddChoixPoste"
+                                ErrorMessage="*" InitialValue="Selectionner un poste">*</asp:RequiredFieldValidator>
+                            <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Label ID="lblStationGraph" runat="server" Style="text-decoration: underline"
+                                        Visible="False">Justification :</asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="txtStationGraph" runat="server" EnableViewState="False" Visible="False"
+                                        Width="429px"></asp:TextBox>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="ddChoixPoste" EventName="SelectedIndexChanged" />
+                                </Triggers>
+                            </asp:UpdatePanel>
                         </td>
                     </tr>
                     <tr>
@@ -392,12 +396,11 @@
                     <tr>
                         <td>
                             <asp:Button ID="Envoyer" runat="server" OnClick="Envoyer_Click" Text="Demander la validation" />
-
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
 <p>
-    version 1.0.2</p>
+    version 1.0.5</p>
 
