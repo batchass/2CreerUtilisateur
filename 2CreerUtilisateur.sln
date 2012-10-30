@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2CreerUtilisateur", "2CreerUtilisateur\2CreerUtilisateur.csproj", "{47CCFD46-60F2-4EA6-9347-4F0042B77557}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2CreerUtilisateur", "2CreerUtilisateur.csproj", "{47CCFD46-60F2-4EA6-9347-4F0042B77557}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09EA9399-2B07-4B67-8EDF-385199765D36}"
+	ProjectSection(SolutionItems) = preProject
+		install.bat = install.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
